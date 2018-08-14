@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script data-main="js/index.js" src="js/require.js"></script>
+    <script src="js/index.js"></script>
+</head>
+<body id="s-up">
+
+    <article>
+        <header id="sup-head">Sign Up</header>
+            <form>
+                Username  <br><input type="text" id="UserName" autocomplete="username" autofocus placeholder="USERNAME" required><br>
+                First Name  <br><input type="text" id="Fname" placeholder="FIRST NAME" required><br>
+                Last Name  <br><input type="text" id="Lname" placeholder="LAST NAME"><br>
+                Email  <br><input type="email" id="email" placeholder="EMAIL ID" required><br>
+                Nation  <br><input type="text" list="countries" autocomplete="tel-national" id="nation" placeholder="COUNTRY"><br>
+                
+                <datalist id="countries">
+                  <option value="India">
+                  <option value="U.S.A">
+                  <option value="U.K.">
+                  <option value="China">
+                  <option value="Russia">
+                </datalist>
+
+                State  <br><input type="text" list="Goa , up ,mp" id="state" placeholder="STATE"><br>
+                Date OF Birth  <br><input type="date" autocomplete="bday" id="dob" placeholder="BIRTH DATE"><br>
+                Profession  <br><input type="text" id="profession" autocomplete="work" placeholder="PROFESSION"><br>
+                <input type="submit" id="button" value="Submit">
+            </form>
+    </article>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
+   
+</body>
+</html>

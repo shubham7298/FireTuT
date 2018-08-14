@@ -1,0 +1,105 @@
+nav
+{
+  overflow: hidden;
+  color: white;
+  align-content: flex-end;
+  height: 3em;
+  background-color: green;
+top: 0; 
+width: 100%;
+position: fixed;
+}
+nav a {
+   float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: #ddd;
+    color: black;
+}
+
+#s-up
+{
+    background-color: #20B2AA;
+}
+
+article
+{
+  display: block;
+  height:42em;
+  width: 30%;
+  background-color: rgb(255, 255, 255);
+  margin-left: 35%;
+  margin-top:  10%;
+  margin-bottom:  10%;
+  font-family: sans-serif;
+  font-weight: 500;
+  font-stretch: expanded;
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+
+}
+
+#sup-head{
+    font-family: sans-serif;
+    font-style: normal;
+    font-size: larger;
+    font-weight: 1000;
+    font-stretch: expanded;
+    text-align: center;
+    padding-top: 1em;
+}
+
+form{
+    width: 100%;
+    line-height: 1.7em;
+    font-family: "Times New Roman", Times, serif;
+    display: table;
+    
+}
+
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=email], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+input[type=date], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+input[type=submit] {
+    width: 100%;
+    background-color: #24a59e;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
