@@ -1,54 +1,96 @@
-const firebase = require("firebase");
-// Required for side-effects
-require("firebase/firestore");
-var config = {
-    apiKey: "AIzaSyD7zLpYOeiCeLIYqoiuAdo8cA9nNHUZizk",
-    authDomain: "db-1-12345.firebaseapp.com",
-    databaseURL: "https://db-1-12345.firebaseio.com",
-    projectId: "db-1-12345",
-    storageBucket: "db-1-12345.appspot.com",
-    messagingSenderId: "757540290891"
-  };
-  firebase.initializeApp(config);
 
-// Initialize Cloud Firestore through Firebase
-var db = firebase.firestore();
+var LOGIN_USER = null;
 /*
-// Creating Collrctions
-db.collection("users").add({
-    username: "enigma",
-    first: "Shubham",
-    last: "Singh",
-    email: "shubhamsingh7298@gmail.com" ,
-    Nation: "India" ,
-    State: "Maharastra" ,
-    dob: 07/02/1998,
-    gender: 'M',
-    profession: "student"
-})
-.then(function(docRef) {
-    console.log("Document written with ID: ", docRef.id);
-})
-.catch(function(error) {
-    console.error("Error adding document: ", error);
-});
-*/
+firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+  
+      console.log(user);
+  
+      var user = firebase.auth().currentUser;
+  
+      if(user != null){
+  
+        var email_id = user.email;
+        console.log( "welcome " + email_id);
+        //document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
+  
+        //var alovelaceDocumentRef = db.doc('users/DCG4BVA6aETGqqOd25Jkb9Ba0Es2');
+        const docres=db.doc("users/"+email_id)
+      .then(function() {
+          console.log("Document successfully written!");
+      })
+      .catch(function(error) {
+          console.error("Error writing document: ", error);
+      });
+       
+  
+  
+  
+  
+      }
+  
+    } else {
+      // No user is signed in.
+  
+      //document.getElementById("user_div").style.display = "none";
+      //document.getElementById("login_div").style.display = "block";
+  
+    }
+  });
+  */
 
-const docRef = db.collection("samples").doc("personal");
-const Uname = document.querySelector("#UserName");
-const name = document.querySelector("#Fanme");
-const mail = document.querySelector("#email");
-
-saveButton.addEventListener("click",function() {
-    const textToSave = name.value;
-    console.log("Data of "+ textToSave + "has been taken");
-    docRef.set({
-        personalStatus : textToSave
-    })
-    .then(function() {
-        console.log("Satus Saves Successfully");
-    }).catch(function(error) {
-        console.log("Got an error : ",error);
+function signup()
+{
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("passW").value;
+    console.log('find_me2');
+    var f_call = firebase.functions().httpsCallable('funk1');      
+    f_call({email,password}).then(function(result){
+        console.log(result+'here5')
     });
 
-})
+    /* save to user
+    user = {
+        dob: val.dob
+    }       */
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+    
+        window.alert("Error : " + errorMessage);
+    
+        // ...
+      });
+    }
+
+    // Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+function login(){
+  
+
+    var userEmail = document.getElementById("e-mail").value;
+    var userPass = document.getElementById("psw").value;
+  
+    firebase.auth().signInWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+  
+      window.alert("Error : " + errorMessage);
+  
+      // ...
+    });
+
+
+} 

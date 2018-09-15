@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
     <!-- jQuery
      -->
-    
+
 </head>
 <body>
 	<nav>
@@ -16,21 +16,62 @@
 	 <a href="#news">Polls</a>
       <a href="#contact">Trending</a>
       <a href="signup.html">SignUp</a>
+      <button id="log-button" onclick="document.getElementById('id01').style.display='block'">Login</button>
+     
     </nav>
+
+    <!-- The Modal -->
+<div id="id01" class="modal">
+  <span onclick="document.getElementById('id01').style.display='none'"
+class="close" title="Close Modal">&times;</span>
+
+  <!-- Modal Content -->
+  <form class="modal-content animate" > 
+    <div class="imgcontainer">
+      <img src="images.png" alt="Avatar" class="avatar">
+    </div>
+
+    <div class="container">
+      <label for="e-mail"><b>Email</b></label>
+      <input type="email" placeholder="Enter Email" name="e-mail" required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" name="psw" required>
+
+      <button onclick="login()" type="submit">Login</button>
+      <label>
+        <input type="checkbox" checked="checked" name="remember"> Remember me
+      </label>
+    </div>
+
+    <div class="container" style="background-color:#f1f1f1">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+      <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+  </form>  
+</div>
+<!--         %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5                   -->
+
+
+
+
+
     <script src="js/index.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
-    <script>
-        // Initialize Firebase
-        var config = {
-          apiKey: "AIzaSyD7zLpYOeiCeLIYqoiuAdo8cA9nNHUZizk",
-          authDomain: "db-1-12345.firebaseapp.com",
-          databaseURL: "https://db-1-12345.firebaseio.com",
-          projectId: "db-1-12345",
-          storageBucket: "db-1-12345.appspot.com",
-          messagingSenderId: "757540290891"
-        };
-        firebase.initializeApp(config);
-      </script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.3.0/firebase-firestore.js"></script>
+ 
+<script src="https://www.gstatic.com/firebasejs/5.4.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDkZO278pS_S9fySKVP6FPL0dQH5Mv_4hQ",
+    authDomain: "my-pro-fc06e.firebaseapp.com",
+    databaseURL: "https://my-pro-fc06e.firebaseio.com",
+    projectId: "my-pro-fc06e",
+    storageBucket: "my-pro-fc06e.appspot.com",
+    messagingSenderId: "33292002728"
+  };
+  firebase.initializeApp(config);
+</script>
 </body>
 </html>

@@ -6,8 +6,8 @@
     <title>Sign Up</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-    <script data-main="js/index.js" src="js/require.js"></script>
-    <script src="js/index.js"></script>
+   
+
 </head>
 <body id="s-up">
 
@@ -31,11 +31,29 @@
                 State  <br><input type="text" list="Goa , up ,mp" id="state" placeholder="STATE"><br>
                 Date OF Birth  <br><input type="date" autocomplete="bday" id="dob" placeholder="BIRTH DATE"><br>
                 Profession  <br><input type="text" id="profession" autocomplete="work" placeholder="PROFESSION"><br>
+<<<<<<< HEAD
+                Password  <br><input type="password" id="passW"  placeholder=""><br>
+                <input onclick="signup()" type="submit" id="button" value="Submit">
+=======
                 <input type="submit" id="button" value="Submit">
+>>>>>>> 2d1c6b0e592d30acf0afc25dbffb2961ff46a4bc
             </div>
     </article>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/5.2.0/firebase-firestore.js"></script>
-   
+
+<script src="https://www.gstatic.com/firebasejs/5.4.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDkZO278pS_S9fySKVP6FPL0dQH5Mv_4hQ",
+    authDomain: "my-pro-fc06e.firebaseapp.com",
+    databaseURL: "https://my-pro-fc06e.firebaseio.com",
+    projectId: "my-pro-fc06e",
+    storageBucket: "my-pro-fc06e.appspot.com",
+    messagingSenderId: "33292002728"
+  };
+  firebase.initializeApp(config);
+</script>
+          
+ <script src="js/index.js"></script>
 </body>
 </html>
